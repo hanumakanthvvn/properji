@@ -3,7 +3,8 @@
 <head>
   <title>Gmap</title>
   <%= stylesheet_link_tag    "gmaps4rails" %>
-  <%= javascript_include_tag "gmaps4rails","application" %>
+  <%= javascript_include_tag "application","gmaps4rails" %>
+
   <%= csrf_meta_tags %>
  <%= yield :head %>
 </head>
