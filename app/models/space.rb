@@ -1,5 +1,5 @@
 class Space < ActiveRecord::Base
-acts_as_gmappable 
+  acts_as_gmappable
   attr_accessible :address, :latitude, :longitude, :name
   belongs_to :user
 
