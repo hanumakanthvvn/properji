@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gmap</title>
+  <%= stylesheet_link_tag    "gmaps4rails" %>
+  <%= javascript_include_tag "gmaps4rails","application" %>
+  <%= csrf_meta_tags %>
+ <%= yield :head %>
+</head>
+<body>
+
+
+
+<div id="container" style="width:100%">
+
+<div id="header" style="background-color:#FFA500;">
+<h1 style="margin-bottom:0;">Main Title of Web Page</h1></div>
+
+<div id="leftside" style="background-color:#EEEEEE;width:20%;float:left;">
+</div>
+
+<div id="content" style="background-color:#EEEEEE;width:60%;float:left">
+<%= yield %>
+<%= yield :scripts %></div>
+
+<div id="rightside" style="background-color:#EEEEEE;width:20%;float:left;">
+</div>
+
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+Copyright © W3Schools.com</div>
+
+</div>
+
+</body>
+</html>

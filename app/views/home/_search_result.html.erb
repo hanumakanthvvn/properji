@@ -1,0 +1,9 @@
+<%# TODO: Can use the space/index file instead of this partial%>
+
+  <% @spaces.each do |space| %>
+    <br/>
+      <div>
+        <%= space.name %>
+        <%= space.address %>
+      </div>
+  <% end %>

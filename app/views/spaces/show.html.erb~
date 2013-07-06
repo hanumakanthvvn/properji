@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @space.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @space.address %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @space.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @space.longitude %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_space_path(@space) %> |
+<%= link_to 'Back', spaces_path %>
+<%= gmaps4rails(@json) %>
