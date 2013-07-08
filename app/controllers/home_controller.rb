@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
 
   def search
-    @spaces = Space.address_like(params[:name]).paginate(:page => params[:page],:per_page => 1)
+    @spaces = Space.address_like(params[:name]).paginate(:page => params[:page])
     respond_to do |format|
       format.js
     end

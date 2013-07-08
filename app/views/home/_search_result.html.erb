@@ -2,8 +2,10 @@
 <% @spaces.each do |space| %>
     <br/>
     <div>
-      <%= space.name %>
+      <%= space.space_type %>
       <%= space.address %>
+      <%= link_to 'List View', space_path(space,:view => 'list')%>
+      <%= link_to 'Map View', space_path(space,:view => 'map')%>
     </div>
 <% end %>
 <%= will_paginate @spaces%>

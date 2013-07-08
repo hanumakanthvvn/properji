@@ -24,7 +24,7 @@ class SpacesController < ApplicationController
   # GET /spaces/new
   # GET /spaces/new.json
   def new
-    @space = Space.new
+    @space = current_user.spaces.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +40,8 @@ class SpacesController < ApplicationController
   # POST /spaces
   # POST /spaces.json
   def create
-    @space = Space.new(params[:space])
+    params[:space][:address] = "#{params[:space][:location]},#{params[:space][:city]},#{params[:space][:state]} "
+    @space = current_user.spaces.build(params[:space])
 
     respond_to do |format|
       if @space.save
@@ -59,6 +60,7 @@ class SpacesController < ApplicationController
     @space = Space.find(params[:id])
 
     respond_to do |format|
+      params[:space][:address] = "#{params[:space][:location]},#{params[:space][:city]},#{params[:space][:state]} "
       if @space.update_attributes(params[:space])
         format.html { redirect_to @space, notice: 'Space was successfully updated.' }
         format.json { head :no_content }

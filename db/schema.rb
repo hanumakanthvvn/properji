@@ -15,13 +15,26 @@ ActiveRecord::Schema.define(:version => 20130626174704) do
 
   create_table "spaces", :force => true do |t|
     t.integer  "user_id"
-    t.string   "name"
+    t.string   "space_type"
+    t.string   "accommodates"
+    t.string   "size"
+    t.boolean  "wifi"
+    t.boolean  "conference_room"
+    t.boolean  "kitchen"
+    t.boolean  "window"
+    t.boolean  "parking"
+    t.boolean  "ac"
+    t.boolean  "printer"
     t.string   "address"
+    t.string   "location"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "users", :force => true do |t|

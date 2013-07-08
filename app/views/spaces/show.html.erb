@@ -2,7 +2,7 @@
 
 <p>
   <b>Name:</b>
-  <%= @space.name %>
+  <%= @space.space_type %>
 </p>
 
 <p>
@@ -24,4 +24,4 @@
 
 <%= link_to 'Edit', edit_space_path(@space) %> |
 <%= link_to 'Back', spaces_path %>
-<%= gmaps4rails(@json) %>
+<%= gmaps4rails(@json) if params[:view].eql?('map')%>

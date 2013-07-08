@@ -1,27 +1,55 @@
 <%= form_for(@space) do |f| %>
-  <% if @space.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@space.errors.count, "error") %> prohibited this space from being saved:</h2>
+    <% if @space.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@space.errors.count, "error") %> prohibited this space from being saved:</h2>
 
-      <ul>
-      <% @space.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @space.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :space_type %><br />
+      <%= f.select :space_type, Space::SPACE_TYPES %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
-  </div>
+    <div class="field">
+      <%= f.label :accommodates %><br />
+      <%= f.text_field :accommodates %>
+    </div>
+    <div class="field">
+      <%= f.label :size %><br />
+      <%= f.text_field :size %>
+    </div><br />
+    <div class="field">
+      <%= f.label :wifi %><%= f.check_box :wifi %>
+      <%= f.label :conference_room %><%= f.check_box :conference_room %>
+      <%= f.label :kitchen %><%= f.check_box :kitchen %>
+      <%= f.label :window %><%= f.check_box :window %>
+      <%= f.label :parking %><%= f.check_box :parking %>
+      <%= f.label :ac %><%= f.check_box :ac %>
+      <%= f.label :printer %><%= f.check_box :printer %>
+    </div>      <br />
 
- 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="field">
+      <%= f.label :location %><br />
+      <%= f.text_field :location %>
+    </div>
+    <div class="field">
+      <%= f.label :city %><br />
+      <%= f.text_field :city %>
+    </div>
+    <div class="field">
+      <%= f.label :state %><br />
+      <%= f.text_field :state %>
+    </div>
+    <div class="field">
+      <%= f.label :zip_code %><br />
+      <%= f.text_field :zip_code %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

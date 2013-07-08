@@ -6,30 +6,92 @@
   <%= javascript_include_tag "application","gmaps4rails" %>
 
   <%= csrf_meta_tags %>
- <%= yield :head %>
+  <%= yield :head %>
+  <style>
+      .header{
+          width: 100%;
+          height: 100px;
+          background: #b0e0e6;
+          margin: 1px 0 1px;
+          text-align: center;
+          position: relative;
+
+      }
+      .leftside{
+          width: 10%;
+          height: 550px;
+          margin: 0px 0 0px;
+          float: left;
+          background: none scroll 0 0 #f5f5f5;
+
+      }
+      .content{
+          width: 80%;
+          height: 550px;
+          background: #f5f5f5;
+          margin: 1px 0 1px;
+          float: left;
+
+      }
+      .rightside{
+          width: 10%;
+          height: 550px;
+          margin: 0px 0 0px;
+          float: left;
+          background: none scroll 0 0 #f5f5f5;
+
+      }
+      .footer{
+          width: 100%;
+          height: 20px;
+          background: none scroll 0 0 #b0e0e6;
+          margin: 1px 0 1px;
+          float:left;
+          text-align: center;
+
+      }
+      .header-links{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+      }
+      .home-search{
+          text-align: center;
+          margin-top: 100px;
+
+      }
+  </style>
 </head>
 <body>
 
 
 
-<div id="container" style="width:100%">
 
-<div id="header" style="background-color:#FFA500;">
-<h1 style="margin-bottom:0;">Main Title of Web Page</h1></div>
+<div class="header"><%= link_to 'properJI', root_path%>
+  <div class="header-links">
+    <%if current_user%>
+        <%= link_to 'List your Space', new_space_path%>
+        <%= link_to 'Logout', destroy_user_session_path,:method => 'delete'%>
 
-<div id="leftside" style="background-color:#EEEEEE;width:20%;float:left;">
+    <%else%>
+        <%= link_to 'Login', new_user_session_path%> | <%= link_to 'Register', new_user_registration_path%>
+    <%end%>
+  </div>
 </div>
 
-<div id="content" style="background-color:#EEEEEE;width:60%;float:left">
-<%= yield %>
-<%= yield :scripts %></div>
-
-<div id="rightside" style="background-color:#EEEEEE;width:20%;float:left;">
+<div class="leftside" >
 </div>
 
-<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
-Copyright © W3Schools.com</div>
+<div class="content">
+  <%= yield %>
+  <%= yield :scripts %>
+</div>
 
+<div class="rightside" >
+</div>
+
+<div class="footer">
+  Copyright © W3Schools.com
 </div>
 
 </body>
