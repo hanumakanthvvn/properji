@@ -4,6 +4,7 @@ gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+ruby '2.0.0'
 
 gem 'mysql2'
 gem 'devise', '2.2.4'
@@ -11,7 +12,6 @@ gem 'gmaps4rails', '0.8.7'
 gem 'will_paginate', '3.0.3'
 gem 'omniauth'
 gem 'omniauth-linkedin'
-gem 'nifty-generators'
 gem 'linkedin'
 
 # Gems used only for assets and not required
