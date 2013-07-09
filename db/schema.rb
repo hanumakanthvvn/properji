@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626174704) do
+ActiveRecord::Schema.define(:version => 20130708164320) do
+
+  create_table "authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "spaces", :force => true do |t|
     t.integer  "user_id"
@@ -41,6 +49,14 @@ ActiveRecord::Schema.define(:version => 20130626174704) do
     t.string   "name"
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "linkedin_uid"
+    t.string   "mobile_number"
+    t.string   "city"
+    t.string   "location"
+    t.string   "address"
+    t.string   "provider"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -1,4 +1,5 @@
 class SpacesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
   # GET /spaces
   # GET /spaces.json
   def index
@@ -24,7 +25,7 @@ class SpacesController < ApplicationController
   # GET /spaces/new
   # GET /spaces/new.json
   def new
-    @space = current_user.spaces.build
+    @space = Space.new
 
     respond_to do |format|
       format.html # new.html.erb

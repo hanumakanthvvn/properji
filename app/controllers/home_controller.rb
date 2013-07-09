@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   end
 
   def search
+    params[:name].present? || params[:name] = "!!"
     @spaces = Space.address_like(params[:name]).paginate(:page => params[:page])
     respond_to do |format|
       format.js

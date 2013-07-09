@@ -1,8 +1,20 @@
 Properji::Application.routes.draw do
+
+  #match '/auth/:provider' =>  'authentications#create'
+  #resources :authentications
+
   resources :spaces
 
 
-  devise_for :users
+  devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
+  devise_scope :user do
+    # match "/login" => "devise/sessions#new"
+    # delete "/logout" => "devise/sessions#destroy"
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+    post 'users/auth/register'=>'users/omniauth_callbacks#create'
+
+
+  end
 
   resources :home do
    collection do

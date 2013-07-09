@@ -9,14 +9,17 @@ gem 'mysql2'
 gem 'devise', '2.2.4'
 gem 'gmaps4rails', '0.8.7'
 gem 'will_paginate', '3.0.3'
-gem 'will_paginate', '3.0.3'
-
+gem 'omniauth'
+gem 'omniauth-linkedin'
+gem 'nifty-generators'
+gem 'linkedin'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'haml-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -41,3 +44,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "mocha", :group => :test
