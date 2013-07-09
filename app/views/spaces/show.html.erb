@@ -7,19 +7,8 @@
 
 <p>
   <b>Address:</b>
-  <%= @space.address %>
+  <%= @space.location %> ,<%= @space.city %> ,<%= @space.state %> ,<%= @space.zip_code %>
 </p>
-
-<p>
-  <b>Latitude:</b>
-  <%= @space.latitude %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @space.longitude %>
-</p>
-
 
 
 <%= link_to 'Edit', edit_space_path(@space) %> |

@@ -1,0 +1,4 @@
+<%= form_for(@user, :url =>{:action=>:update_profile},:method => :put) do |f| %>
+    <%= render 'users/omniauth_callbacks/form',f: f%>
+    <%= f.submit "Update" %>
+<%end%>
