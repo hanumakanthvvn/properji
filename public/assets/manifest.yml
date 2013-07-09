@@ -7,5 +7,7 @@ application.js: application-3db304f0769db70c9b214b8ab6c9b835.js
 application/index.js: application-3db304f0769db70c9b214b8ab6c9b835.js
 application.css: application-711055a73f38092479ee07284eeb93de.css
 application/index.css: application-711055a73f38092479ee07284eeb93de.css
+gmaps4rails.css: gmaps4rails-7d1ca96e3861ee1d9acac5f46afa7863.css
+gmaps4rails/index.css: gmaps4rails-7d1ca96e3861ee1d9acac5f46afa7863.css
 jquery.min.map: jquery.min-1c0cf7b6a3425fbd9a3bfccab0a99a4e.map
 jquery/index.min.map: jquery.min-1c0cf7b6a3425fbd9a3bfccab0a99a4e.map
