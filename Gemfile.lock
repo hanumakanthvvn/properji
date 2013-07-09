@@ -79,7 +79,6 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.7.7)
     mysql2 (0.3.11)
-    nifty-generators (0.4.6)
     oauth (0.4.7)
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
@@ -153,7 +152,6 @@ DEPENDENCIES
   linkedin
   mocha
   mysql2
-  nifty-generators
   omniauth
   omniauth-linkedin
   rails (= 3.2.12)
