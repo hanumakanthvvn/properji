@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
 
   ## Validations
-  validates :first_name,presence: true, length: {minimum: 2,maximum: 50 }
+  validates :first_name,length: {minimum: 2,maximum: 50 },allow_blank: true
   validates :last_name, length: {maximum: 50 }, allow_blank: true
   validates :address, length: {maximum: 250 }, allow_blank: true
 
