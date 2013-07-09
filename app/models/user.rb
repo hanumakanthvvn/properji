@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name,:last_name,:linkedin_uid,:mobile_number,
                   :city,:location, :address,:provider
 
-  has_many :authentications
   has_many :spaces
 
 
