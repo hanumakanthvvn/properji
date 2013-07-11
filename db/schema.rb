@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708164320) do
+ActiveRecord::Schema.define(:version => 20130711132119) do
 
-  create_table "authentications", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "admins", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "spaces", :force => true do |t|
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20130708164320) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
+    t.boolean  "is_checked"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end

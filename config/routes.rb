@@ -5,6 +5,16 @@ Properji::Application.routes.draw do
 
   resources :spaces
 
+  devise_for :admins, :controllers => { :sessions => "admins/sessions" }
+
+  namespace :admins do
+    resources :dashboard do
+      collection do
+        get :home
+      end
+    end
+  end
+
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
   devise_scope :user do
     # match "/login" => "devise/sessions#new"

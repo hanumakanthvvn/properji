@@ -20,6 +20,7 @@ class CreateSpaces < ActiveRecord::Migration
       t.float :latitude
       t.float :longitude
       t.boolean :gmaps
+      t.boolean :is_checked
       t.timestamps
     end
   end
